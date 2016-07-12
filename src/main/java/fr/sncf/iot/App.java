@@ -3,6 +3,7 @@ package fr.sncf.iot;
 import fr.sncf.iot.factory.IOTFactory;
 import fr.sncf.iot.publisher.MQTTPublisher;
 import fr.sncf.iot.service.PropertiesService;
+import fr.sncf.iot.service.impl.CapteurMessageGeneratorImpl;
 import fr.sncf.iot.service.impl.MessageGeneratorImpl;
 import fr.sncf.iot.service.impl.PropertiesServiceImpl;
 import org.fusesource.mqtt.client.MQTT;
@@ -21,13 +22,14 @@ public class App
 
     private static final Logger LOG = LoggerFactory.getLogger(App.class);
     public static final int NB_MESSAGES_1000 = 1000;
-    private static final int NB_MESSAGES_100000 = 100000;
-    private static final int NB_MESSAGES_10000 = 10000;
-    private static final int NB_MESSAGES_10 = 10;
+    public static final int NB_MESSAGES_100000 = 100000;
+    public static final int NB_MESSAGES_10000 = 10000;
+    public static final int NB_MESSAGES_10 = 10;
 
     private static void init() throws IOException, URISyntaxException {
         LOG.debug("Init Factory");
         IOTFactory.getInstance().addComponent(IOTFactory.MESSAGE_GENERATOR, new MessageGeneratorImpl());
+        IOTFactory.getInstance().addComponent(IOTFactory.CAPTEUR_MESSAGE_GENERATOR, new CapteurMessageGeneratorImpl());
         PropertiesService ps = new PropertiesServiceImpl();
         IOTFactory.getInstance().addComponent(IOTFactory.PROPERTIES_SERVICE, ps);
         MQTT mqtt = new MQTT();

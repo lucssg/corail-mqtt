@@ -10,8 +10,6 @@ import org.fusesource.mqtt.client.QoS;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.stream.IntStream;
-
 /**
  * Created by lmarchau on 28/06/2016.
  */
@@ -20,6 +18,7 @@ public class MQTTPublisher {
     private static final Logger LOG = LoggerFactory.getLogger(MQTTPublisher.class);
 
     private MessageGenerator generator;
+    private MessageGenerator capteurGenerator;
 
     private PropertiesService propertiesService;
 
@@ -29,6 +28,7 @@ public class MQTTPublisher {
 
     public MQTTPublisher() {
         generator = (MessageGenerator) IOTFactory.getInstance().getComponent(IOTFactory.MESSAGE_GENERATOR);
+        capteurGenerator = (MessageGenerator) IOTFactory.getInstance().getComponent(IOTFactory.CAPTEUR_MESSAGE_GENERATOR);
         propertiesService = (PropertiesService) IOTFactory.getInstance().getComponent(IOTFactory.PROPERTIES_SERVICE);
         mqtt = (MQTT) IOTFactory.getInstance().getComponent(IOTFactory.MQTT);
         connection = mqtt.futureConnection();
@@ -53,7 +53,7 @@ public class MQTTPublisher {
         LOG.debug("Masse Message START (" + nbMessages + ")");
         LOG.debug("Retain: " + Boolean.parseBoolean(propertiesService.getProperty("mqtt.topic.retain")));
         for (int i = 0; i < nbMessages; ++i) {
-            byte[] message = generator.generate(MessageGenerator.MSG_SIZE_100).getBytes();
+            byte[] message = capteurGenerator.generate(MessageGenerator.MSG_SIZE_100).getBytes();
 //            LOG.info("Message: {}", new String(message));
             Future<Void> publish = connection.publish(propertiesService.getProperty("mqtt.topic.publish"), message, QoS.AT_LEAST_ONCE, Boolean.parseBoolean(propertiesService.getProperty("mqtt.topic.retain")));
             publish.await();

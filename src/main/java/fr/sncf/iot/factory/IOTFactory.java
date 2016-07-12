@@ -9,6 +9,7 @@ import java.util.Map;
 public class IOTFactory {
 
     public static final String MESSAGE_GENERATOR = "MessageGenerator";
+    public static final String CAPTEUR_MESSAGE_GENERATOR = "CapteurMessageGenerator";
     public static final String MQTT = "MQTT";
     public static final String PROPERTIES_SERVICE = "PropertiesService";
     public static final String PUBLISHER = "Publisher";
