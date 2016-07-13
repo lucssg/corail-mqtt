@@ -1,6 +1,6 @@
-package fr.sncf.iot.service.impl;
+package fr.fcns.iot.service.impl;
 
-import fr.sncf.iot.service.MessageGenerator;
+import fr.fcns.iot.service.MessageGenerator;
 import org.apache.commons.lang3.RandomStringUtils;
 
 import java.time.ZonedDateTime;

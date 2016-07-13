@@ -1,6 +1,6 @@
-package fr.sncf.iot.service.impl;
+package fr.fcns.iot.service.impl;
 
-import fr.sncf.iot.service.PropertiesService;
+import fr.fcns.iot.service.PropertiesService;
 
 import java.io.IOException;
 import java.util.Properties;

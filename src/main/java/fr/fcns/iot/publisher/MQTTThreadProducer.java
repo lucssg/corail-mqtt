@@ -1,9 +1,9 @@
-package fr.sncf.iot.publisher;
+package fr.fcns.iot.publisher;
 
-import fr.sncf.iot.factory.IOTFactory;
-import fr.sncf.iot.factory.IOTThreadFactory;
-import fr.sncf.iot.service.MessageGenerator;
-import fr.sncf.iot.service.PropertiesService;
+import fr.fcns.iot.service.MessageGenerator;
+import fr.fcns.iot.factory.IOTFactory;
+import fr.fcns.iot.factory.IOTThreadFactory;
+import fr.fcns.iot.service.PropertiesService;
 import org.fusesource.mqtt.client.Future;
 import org.fusesource.mqtt.client.FutureConnection;
 import org.fusesource.mqtt.client.MQTT;

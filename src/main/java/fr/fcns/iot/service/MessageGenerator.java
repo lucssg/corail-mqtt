@@ -1,4 +1,4 @@
-package fr.sncf.iot.service;
+package fr.fcns.iot.service;
 
 /**
  * Created by lmarchau on 28/06/2016.

@@ -1,4 +1,4 @@
-package fr.sncf.iot.service;
+package fr.fcns.iot.service;
 
 import java.io.IOException;
 

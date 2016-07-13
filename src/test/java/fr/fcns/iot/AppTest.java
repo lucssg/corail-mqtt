@@ -1,4 +1,4 @@
-package fr.sncf.iot;
+package fr.fcns.iot;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

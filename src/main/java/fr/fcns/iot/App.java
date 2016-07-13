@@ -1,11 +1,11 @@
-package fr.sncf.iot;
+package fr.fcns.iot;
 
-import fr.sncf.iot.factory.IOTFactory;
-import fr.sncf.iot.publisher.MQTTPublisher;
-import fr.sncf.iot.service.PropertiesService;
-import fr.sncf.iot.service.impl.CapteurMessageGeneratorImpl;
-import fr.sncf.iot.service.impl.MessageGeneratorImpl;
-import fr.sncf.iot.service.impl.PropertiesServiceImpl;
+import fr.fcns.iot.publisher.MQTTPublisher;
+import fr.fcns.iot.service.impl.CapteurMessageGeneratorImpl;
+import fr.fcns.iot.service.impl.MessageGeneratorImpl;
+import fr.fcns.iot.service.impl.PropertiesServiceImpl;
+import fr.fcns.iot.factory.IOTFactory;
+import fr.fcns.iot.service.PropertiesService;
 import org.fusesource.mqtt.client.MQTT;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

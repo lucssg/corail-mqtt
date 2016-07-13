@@ -9,7 +9,7 @@
         </encoder>
     </appender>
 
-    <logger name="fr.sncf.iot" level="debug"/>
+    <logger name="fr.fcns.iot" level="debug"/>
 
     <root level="warn">
         <appender-ref ref="consoleAppender" />

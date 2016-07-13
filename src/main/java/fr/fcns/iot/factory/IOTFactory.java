@@ -1,4 +1,4 @@
-package fr.sncf.iot.factory;
+package fr.fcns.iot.factory;
 
 import java.util.HashMap;
 import java.util.Map;
